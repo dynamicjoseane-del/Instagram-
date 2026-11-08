@@ -84,6 +84,7 @@ def main(args):
         new_f, new_following = load(args[1])
         print(f"Seguidores antes: {len(old_f)} | agora: {len(new_f)}")
         show("Deixaram de te seguir", old_f - new_f)
+        show("Deixaram de te seguir e você continua seguindo", (old_f - new_f) & new_following)
         show("Novos seguidores", new_f - old_f)
         show("Você segue, mas não te seguem de volta (hoje)", new_following - new_f)
     else:
